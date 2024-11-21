@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Desativa o scroll */
+    }
+
+    section {
+      width: 100%;  /* Ocupa 100% da largura */
+      height: 100vh; /* Cada seção ocupa 100% da altura da tela */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 2rem;
+      transition: transform 0.5s ease-in-out; /* Suaviza a transição */
+    }
+
+    section:nth-child(1) {
+      background-color: #34495e; /* Cinza escuro div do site */
+      color: white;
+    }
+
+    section:nth-child(2) {
+      background-color: #ffb3ba; /* Vermelho EP1 */
+      color: white;
+    }
+
+    section:nth-child(3) {
+      background-color: #ffdfba; /* Laranja EP2 */
+      color: white;
+    }
+
+    section:nth-child(4) {
+      background-color: #ffffba; /* Amarelo EP3 */
+      color: white;
+    }
+
+    section:nth-child(5) {
+      background-color: #baffc9; /* Verde EP4 */
+      color: white;
+    }
+
+    section:nth-child(6) {
+      background-color: #bae1ff; /* Azul EP5 */
+      color: white;
+    }
+
+	section:nth-child(7) {
+	  background-color: #cde5eb; /* Azul escuro bebe EP6 */
+	  color: white;
+	}
+
+    .button-container {
+      display: flex;
+      gap: 10px; /* Espaçamento entre os botões */
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f1c40f;
+    }
+
+    iframe {
+      width: 100%; /* Largura ajustável */
+      height: 50%; /* Altura ajustável */
+      border: none; /* Remove bordas do iframe */
+      overflow: hidden; /* Garantia extra para desativar scroll */
+    }
+
+    h1 {
+    	color: white; /* Cor do texto */
+  		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
+	}
+  </style>
+</head>
+<body>
+  <section id="section1">
+    <div class="button-container">
+      <h1>Black Bird</h1>
+      <button onclick="window.location.href='./bird.html';">Assitir Agora</button>
+    </div>
+    <div class="button-container">
+      <h1>Pacto Brutal: O Assassinato de Daniella Perez</h1>
+      <button onclick="window.location.href='./perez.html';">Assitir Agora</button>
+    </div>
+    <!-- posso adicionar 8 no total mas o 8 tem de ser para a pagina seguinte-->
+  </section>
+
+  <script>
+    // Ajustar a altura das seções para dispositivos móveis
+    function adjustSectionHeight() {
+      const sections = document.querySelectorAll('section');
+      const viewportHeight = window.innerHeight;
+      sections.forEach(section => {
+        section.style.height = `${viewportHeight}px`;
+      });
+    }
+
+    // Função para mover para a seção desejada
+    function goToSection(sectionNumber) {
+      const targetSection = document.getElementById(`section${sectionNumber}`);
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Chamar o ajuste ao carregar e redimensionar a janela
+    window.addEventListener('load', adjustSectionHeight);
+    window.addEventListener('resize', adjustSectionHeight);
+  </script>
+</body>
+</html>
