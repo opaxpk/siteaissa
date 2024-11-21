@@ -6,94 +6,88 @@
   <title>Pacto Brutal: O Assassinato de Daniella Perez</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      overflow: hidden; /* Desativa o scroll */
-    }
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Desativa o scroll global */
+}
 
-    section {
-      width: 100%;  /* Ocupa 100% da largura */
-      height: 100vh; /* Cada seção ocupa 100% da altura da tela */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      font-size: 2rem;
-      transition: transform 0.5s ease-in-out; /* Suaviza a transição */
-    }
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  transition: transform 0.5s ease-in-out; /* Suaviza a transição */
+  padding: 20px;
+}
 
-    section:nth-child(1) {
-      background-color: #34495e; /* Cinza escuro div do site */
-      color: white;
-    }
+section h1 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
+}
 
-    section:nth-child(2) {
-      background-color: #ffb3ba; /* Vermelho EP1 */
-      color: white;
-    }
+section:nth-child(1) { background-color: #ffb3ba; }
+section:nth-child(2) { background-color: #ffdfba; }
+section:nth-child(3) { background-color: #ffffba; }
+section:nth-child(4) { background-color: #baffc9; }
+section:nth-child(5) { background-color: #bae1ff; }
+section:nth-child(6) { background-color: #cde5eb; }
 
-    section:nth-child(3) {
-      background-color: #ffdfba; /* Laranja EP2 */
-      color: white;
-    }
+.button-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Permite os botões se ajustarem ao espaço */
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-    section:nth-child(4) {
-      background-color: #ffffba; /* Amarelo EP3 */
-      color: white;
-    }
+button {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    section:nth-child(5) {
-      background-color: #baffc9; /* Verde EP4 */
-      color: white;
-    }
+button:hover {
+  background-color: #f1c40f;
+}
 
-    section:nth-child(6) {
-      background-color: #bae1ff; /* Azul EP5 */
-      color: white;
-    }
+/* Torna o iframe responsivo */
+iframe {
+  width: 100%;
+  max-width: 560px; /* Limite para telas maiores */
+  aspect-ratio: 16 / 9; /* Mantém a proporção de vídeo */
+  border: none;
+  overflow: hidden;
+}
 
-	section:nth-child(7) {
-	  background-color: #cde5eb; /* Azul escuro bebe EP6 */
-	  color: white;
-	}
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+  section {
+    font-size: 1rem;
+  }
 
-    .button-container {
-      display: flex;
-      gap: 10px; /* Espaçamento entre os botões */
-      margin-bottom: 20px;
-    }
+  .button-container {
+    gap: 5px;
+  }
 
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background-color: white;
-      color: #333;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #f1c40f;
-    }
-
-    iframe {
-      width: 100%; /* Largura ajustável */
-      height: 50%; /* Altura ajustável */
-      border: none; /* Remove bordas do iframe */
-      overflow: hidden; /* Garantia extra para desativar scroll */
-    }
-
-    h1 {
-    	color: white; /* Cor do texto */
-  		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
-	}
+  button {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -158,7 +152,6 @@
   </section>
 
   <script>
-    // Ajustar a altura das seções para dispositivos móveis
     function adjustSectionHeight() {
       const sections = document.querySelectorAll('section');
       const viewportHeight = window.innerHeight;
